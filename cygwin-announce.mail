@@ -1,6 +1,6 @@
 To: cygwin-announce@cygwin.com
-Subject: Updated: package N.N
-Subject: New package: git-oodiff-20080328-1 -- Git diff filter for OpenOffice documents
+Subject: Updated: git-oodiff 20080328-2 -- Git diff filter for OpenOffice documents
+--text follows this line--
 
 PACKAGE DESCRIPTION
 ===================
@@ -15,7 +15,7 @@ program.
 CHANGES SINCE LAST RELEASE
 ==========================
 
-This project does not maintain Change Logs.
+This project does not have Change Logs.
 
 INSTALL OR UPGRADE NOTES
 ========================

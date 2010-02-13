@@ -30,11 +30,8 @@ See git-diff(1) manual page
 A git diff filter program to make it possible to diff OpenOffice
 documents. A wrapper script to odt2txt program.
 
-See "How to use git to track OpenDocument (OpenOffice, Koffice)
-files?" at
-http://git.or.cz/gitwiki/GitTips#head-1cdd4ab777e74f12d1ffa7f0a793e46dd06e5945
-
-Homepage: http://www-verimag.imag.fr/~moy/opendocument
+See topic "How to use git to track OpenDocument (OpenOffice, Koffice)
+files?" at http://git.wiki.kernel.org/index.php/GitTips
 
 =head1 ENVIRONMENT
 
@@ -50,9 +47,14 @@ git-diff(1) odt2txt(1)
 
 =head1 AUTHORS
 
+The program was written by Matthieu Moy <Matthieu.Moy@imag.fr> and
+improved by Jari Aalto <jari.aalto@cante.net>.
+
+Homepage: http://www-verimag.imag.fr/~moy/opendocument
+
 This manual page was created by Jari Aalto for Cygwin (but
 may be used by others) because the original package did not include
-one. Copyright (C) 2008 Jari Aalto; Licensed under GPL v2 or
+one. Copyright (C) 2008-2010 Jari Aalto; Licensed under GPL v2 or
 later.
 
 =cut
