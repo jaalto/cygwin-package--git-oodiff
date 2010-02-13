@@ -33,6 +33,10 @@ documents. A wrapper script to odt2txt program.
 See topic "How to use git to track OpenDocument (OpenOffice, Koffice)
 files?" at http://git.wiki.kernel.org/index.php/GitTips
 
+NOTE: git-oodiff wrapper is not needed is you have 1.6.1 or never. In
+latest git you can use odt2txt(1) directly via C<textconv> feature of
+git-config(1).
+
 =head1 ENVIRONMENT
 
 None.
