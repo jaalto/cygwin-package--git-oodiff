@@ -15,7 +15,8 @@ program.
 CHANGES SINCE LAST RELEASE
 ==========================
 
-This project does not have Change Logs.
+-Cygwin patches: Clean up temporary files after diff
+- The project itself does not maintain Change Logs.
 
 INSTALL OR UPGRADE NOTES
 ========================
