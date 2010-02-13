@@ -1,0 +1,58 @@
+#  This is manual page in Perl POD format. Read more at
+#  http://perldoc.perl.org/perlpod.html or run command:
+#
+#     perldoc perlpod | less
+#
+#  To check the syntax:
+#
+#     podchecker *.pod
+#
+#  Create manual page with command:
+#
+#    pod2man PAGE.N.pod > PAGE.N
+
+=pod
+
+=head1 NAME
+
+git-oodiff - Git diff filter for OpenOffice documents
+
+=head1 SYNOPSIS
+
+  GIT_EXTERNAL_DIFF=git-oodiff git diff <git options>
+
+=head1 OPTIONS
+
+See git-diff(1) manual page
+
+=head1 DESCRIPTION
+
+A git diff filter program to make it possible to diff OpenOffice
+documents. A wrapper script to odt2txt program.
+
+See "How to use git to track OpenDocument (OpenOffice, Koffice)
+files?" at
+http://git.or.cz/gitwiki/GitTips#head-1cdd4ab777e74f12d1ffa7f0a793e46dd06e5945
+
+Homepage: http://www-verimag.imag.fr/~moy/opendocument
+
+=head1 ENVIRONMENT
+
+None.
+
+=head1 FILES
+
+None.
+
+=head1 SEE ALSO
+
+git-diff(1) odt2txt(1)
+
+=head1 AUTHORS
+
+This manual page was created by Jari Aalto for Cygwin (but
+may be used by others) because the original package did not include
+one. Copyright (C) 2008 Jari Aalto; Licensed under GPL v2 or
+later.
+
+=cut
