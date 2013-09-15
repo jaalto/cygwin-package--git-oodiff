@@ -34,7 +34,6 @@
 
 [ "$debug" ] && set -x
 
-dummy_arg_list="$*"
 tmpbase=/tmp/oodiff.$$
 
 convert_to_txt ()
@@ -47,57 +46,65 @@ convert_to_txt ()
     fi
 }
 
-label1="a/$1"
-label2="b/$1"
+Main ()
+{
+    dummy_arg_list="$*"		# For debugging
 
-if [ "$#" = "1" ]; then
-    echo "Unmerged path $1"
-    exit 0
-fi
+    label1="a/$1"
+    label2="b/$1"
 
-msg=""
-if   [ "$4" = "." ]; then
-    msg="new file mode $7
+    if [ "$#" = "1" ]; then
+	echo "Unmerged path $1"
+	exit 0
+    fi
+
+    msg=""
+
+    if   [ "$4" = "." ]; then
+	msg="new file mode $7
 "
-elif [ "$7" = "." ]; then
-    msg="deleted file mode $4
+    elif [ "$7" = "." ]; then
+	msg="deleted file mode $4
 "
-elif [ ! "$4" = "$7" ]; then
-    msg="\
+    elif [ ! "$4" = "$7" ]; then
+	msg="\
 old mode $4
 new mode $7
 "
-fi
-
-status=0
-fhead="$2"
-fdisk="$5"
-
-if convert_to_txt "$fhead" "1" &&
-    convert_to_txt "$fdisk" "2"
-then
-    echo `basename $0` "$label1" "$label2"
-
-    [ "$msg" ] && echo -e "$msg"
-
-    if diff -L "$label1" -L "$label2" -u "$tmpbase.1" "$tmpbase.2"
-    then
-        echo "No content difference HEAD and $fdisk"
     fi
-else
-    # conversion failed. Fall back to plain diff.
 
-    echo diff -u "$label1" "$label2"
-    echo -e "$msg"
+    status=0
+    fhead="$2"
+    fdisk="$5"
 
-    diff -L "$label1" -L "$label2" -u "$fhead" "$fdisk"
-    status=$?
-fi
+    if convert_to_txt "$fhead" "1" &&
+	convert_to_txt "$fdisk" "2"
+    then
+	echo `basename $0` "$label1" "$label2"
 
-if [ ! "$debug" ]; then
-   rm -f "$tmpbase.1" "$tmpbase.2"
-fi
+	[ "$msg" ] && echo -e "$msg"
 
-exit $status
+	if diff -L "$label1" -L "$label2" -u "$tmpbase.1" "$tmpbase.2"
+	then
+	    echo "No content difference HEAD and $fdisk"
+	fi
+    else
+	# conversion failed. Fall back to plain diff.
+
+	echo diff -u "$label1" "$label2"
+	echo -e "$msg"
+
+	diff -L "$label1" -L "$label2" -u "$fhead" "$fdisk"
+	status=$?
+    fi
+
+    if [ ! "$debug" ]; then
+       rm -f "$tmpbase.1" "$tmpbase.2"
+    fi
+
+    exit $status
+}
+
+Main "$@"
 
 # End of file
