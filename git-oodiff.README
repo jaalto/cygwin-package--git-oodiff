@@ -66,11 +66,15 @@ Port Notes: Jari Aalto
   cd ..
   tar -jcf <PACKAGE-2010-MM-DD>.tar.bz2 <PACKAGE-2010-MM-DD>
 
+----- version 20100213-2 -----
+- Cygwin packaging 2013-09-15 Jari Aalto
+- Remove patches/ and use bin/ directly for modifications.
+
 ----- version 20080328-2 -----
 - Fix exit status code and temporary file clean up (Jari Aalto; see patches/)
 
 ----- version 20080328-1 -----
 - Initial release 2008-03-28 Jari Aalto
 
-Cygwin port maintained by: Jari Aalto <jari.aalto@cante.net>
-Copyright (C) 2008-2010 Jari Aalto; Licensed under GPL v2 or later
+Cygwin port maintained by: user <jari.aalto@cante.net>
+Copyright (C) 2008-2013 Jari Aalto; Licensed under GPL v2 or later
