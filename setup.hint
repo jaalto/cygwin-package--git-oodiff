@@ -1,3 +1,4 @@
+# ARCH=noarch
 sdesc: "Git diff filter for OpenDocument files"
 ldesc: "A git diff filter program to make it possible to diff OpenDocument
 (OpenOffice, Koffice ...) documents. A wrapper script to odt2txt
